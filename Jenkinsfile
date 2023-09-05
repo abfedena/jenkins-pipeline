@@ -10,12 +10,11 @@ node {
 
     stage('Docker Login') {
                 script {
-                    def dockerRegistry = 'ab123cb'
                     def dockerUsername = 'ab123cb'
                     def dockerPassword = 'Hiren@9101991'
 
                     // Log in to Docker registry
-                    def dockerLoginCmd = "docker login -u ${dockerUsername} -p ${dockerPassword} ${dockerRegistry}"
+                    def dockerLoginCmd = "docker login -u ${dockerUsername} -p ${dockerPassword}"
                     def loginStatus = sh(script: dockerLoginCmd, returnStatus: true)
                     
                     if (loginStatus == 0) {
