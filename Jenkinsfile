@@ -8,17 +8,6 @@ node {
         git 'https://github.com/abfedena/node-app.git'
     }
 
-    stage('Docker Login') {
-                script {
-                    def dockerUsername = 'ab123cb'
-                    def dockerPassword = 'Hiren@9101991'
-                    def dockerRegistry = 'docker.io'
-                    DockerHubLogin.call(dockerUsername, dockerPassword)
-                }
-            }
-
-
-
     stage('Build and Push Docker Image') {
         // Use the custom function from the Docker.groovy script
         script {
