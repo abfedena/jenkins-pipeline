@@ -28,8 +28,7 @@ node {
             }
         }
 
-        // Add more stages for building and deploying Docker containers
-    }
+
 
     stage('Build and Push Docker Image') {
         // Use the custom function from the Docker.groovy script
