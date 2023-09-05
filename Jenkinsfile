@@ -8,11 +8,34 @@ node {
         git 'https://github.com/abfedena/node-app.git'
     }
 
+    stage('Docker Login') {
+            steps {
+                script {
+                    def dockerRegistry = 'ab123cb'
+                    def dockerUsername = 'ab123cb'
+                    def dockerPassword = 'Hiren@9101991'
+
+                    // Log in to Docker registry
+                    def dockerLoginCmd = "docker login -u ${dockerUsername} -p ${dockerPassword} ${dockerRegistry}"
+                    def loginStatus = sh(script: dockerLoginCmd, returnStatus: true)
+                    
+                    if (loginStatus == 0) {
+                        echo "Docker login successful."
+                    } else {
+                        error "Docker login failed."
+                    }
+                }
+            }
+        }
+
+        // Add more stages for building and deploying Docker containers
+    }
+
     stage('Build and Push Docker Image') {
         // Use the custom function from the Docker.groovy script
         script {
             def dockerfile = 'Dockerfile'
-            def imageName = 'your-docker-registry/your-app'
+            def imageName = 'ab123cb/shred'
             def imageTag = 'v1.0'
             
             Docker.buildAndPushImage(dockerfile, imageName, imageTag)
