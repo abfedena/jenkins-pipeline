@@ -19,7 +19,7 @@ node {
             def dockerPassword = 'Hiren@9101991'
 
             DockerHubLogin.call(dockerUsername, dockerPassword,dockerRegistry)
-            Docker.buildAndPushImage(dockerfile, imageName, imageTag)
+           // Docker.buildAndPushImage(dockerfile, imageName, imageTag)
         }
     }
 
