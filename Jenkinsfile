@@ -12,7 +12,7 @@ node {
         // Use the custom function from the Docker.groovy script
         script {
             def dockerfile = 'Dockerfile'
-            def imageName = 'nodeapp'
+            def imageName = 'nodeapp/v2'
             def imageTag = 'v1.0'
             
             Docker.buildAndPushImage(dockerfile, imageName, imageTag)
