@@ -18,7 +18,7 @@ node {
             def dockerRegistry = 'docker.io'
             def dockerPassword = 'Hiren@9101991'
 
-            DockerHubLogin.call(dockerUsername, dockerPassword,dockerRegistry)
+            DockerHubLogin.login(dockerUsername, dockerPassword,dockerRegistry)
            // Docker.buildAndPushImage(dockerfile, imageName, imageTag)
         }
     }
