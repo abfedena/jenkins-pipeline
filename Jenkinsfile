@@ -9,7 +9,6 @@ node {
     }
 
     stage('Docker Login') {
-            steps {
                 script {
                     def dockerRegistry = 'ab123cb'
                     def dockerUsername = 'ab123cb'
@@ -26,7 +25,6 @@ node {
                     }
                 }
             }
-        }
 
 
 
