@@ -5,14 +5,14 @@
 node {
     stage('Checkout') {
         // Checkout your source code from Git
-        git 'https://github.com/your/repo.git'
+        git 'https://github.com/abfedena/node-app.git'
     }
 
     stage('Build and Push Docker Image') {
         // Use the custom function from the Docker.groovy script
         script {
             def dockerfile = 'Dockerfile'
-            def imageName = 'your-docker-registry/your-app'
+            def imageName = 'nodeapp'
             def imageTag = 'v1.0'
             
             Docker.buildAndPushImage(dockerfile, imageName, imageTag)
