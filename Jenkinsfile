@@ -12,16 +12,8 @@ node {
                 script {
                     def dockerUsername = 'ab123cb'
                     def dockerPassword = 'Hiren@9101991'
-
-                    // Log in to Docker registry
-                    def dockerLoginCmd = "docker login -u ${dockerUsername} -p ${dockerPassword}"
-                    def loginStatus = sh(script: dockerLoginCmd, returnStatus: true)
-                    
-                    if (loginStatus == 0) {
-                        echo "Docker login successful."
-                    } else {
-                        error "Docker login failed."
-                    }
+                    def dockerRegistry = 'docker.io'
+                    sh "echo ${dockerPassword} | docker login -u ${dockerUsername} --password-stdin ${dockerRegistry}"
                 }
             }
 
