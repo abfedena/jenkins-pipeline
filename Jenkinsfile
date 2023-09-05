@@ -13,7 +13,7 @@ node {
                     def dockerUsername = 'ab123cb'
                     def dockerPassword = 'Hiren@9101991'
                     def dockerRegistry = 'docker.io'
-                    sh "echo ${dockerPassword} | docker login -u ${dockerUsername} --password-stdin ${dockerRegistry}"
+                    DockerHubLogin.call(dockerUsername, dockerPassword)
                 }
             }
 
@@ -25,7 +25,10 @@ node {
             def dockerfile = 'Dockerfile'
             def imageName = 'ab123cb/shred'
             def imageTag = 'v1.0'
-            
+            def dockerUsername = 'ab123cb'
+            def dockerPassword = 'Hiren@9101991'
+
+            DockerHubLogin.call(dockerUsername, dockerPassword)
             Docker.buildAndPushImage(dockerfile, imageName, imageTag)
         }
     }
