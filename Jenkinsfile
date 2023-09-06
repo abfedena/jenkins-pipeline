@@ -1,6 +1,7 @@
 // Jenkinsfile
-
-@Library('my-docker-kubernetes-library') _  // Specify the name of your shared library
+import jenkins.model.*
+jenkins = Jenkins.instance
+@Library('my-docker-kubernetes-library')
 
 node {
     stage('Checkout') {
