@@ -19,8 +19,7 @@ pipeline {
         
     stage('Build and Push Docker Image') {
         steps {
-        // Use the custom function from the Docker.groovy script
-        script {
+          script {
             def dockerfile = 'Dockerfile'
             def imageName = 'ab123cb/shred'
             def imageTag = 'v1.0'
