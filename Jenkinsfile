@@ -12,7 +12,10 @@ pipeline {
         string(name: 'imageTag', description: 'docker registory')
     }
     stages {
-
+        stage('Checkout') {
+        // Checkout your source code from Git
+        git 'https://github.com/abfedena/node-app.git'
+          }
         stage('Docker Login') {
             steps {
                     
