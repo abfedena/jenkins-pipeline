@@ -5,9 +5,7 @@ class MyObject {
         println("Building and pushing an image...")
     }
 }
-
-def myObject = new MyObject()
-myObject.buildAndPushImage()
+MyObject.buildAndPushImage()
 
 /*def buildAndPushImage(String dockerfile, String imageName, String imageTag) {
     // Logic to build and push Docker image
