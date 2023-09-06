@@ -20,12 +20,12 @@ pipeline {
                 }
             }
         
-    stage('Build and Push Docker Image') {
-        steps {
+        stage('Build and Push Docker Image') {
+            steps {
             
-            Docker(dockerfile,imageName,imageTag)
-        }
-    }
-}
+                    Docker(dockerfile,imageName,imageTag)
+              }
+             }
+      }
 }
 
