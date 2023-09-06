@@ -28,7 +28,7 @@ pipeline {
         stage('Build and Push Docker Image') {
             steps {
             
-                    Docker(dockerfile,imageName,imageTag)
+                    Docker_Build(dockerfile,imageName,imageTag)
               }
              }
       }
