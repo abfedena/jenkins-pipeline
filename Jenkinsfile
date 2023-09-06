@@ -1,5 +1,5 @@
 // Jenkinsfile
-@Library('my-docker-kubernetes-library')
+@Library('my-docker-kubernetes-library') _
 
 node {
     stage('Checkout') {
