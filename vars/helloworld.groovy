@@ -1,3 +1,3 @@
-def hiren(){
+def hiren() {
   sh "this is test"
 }
