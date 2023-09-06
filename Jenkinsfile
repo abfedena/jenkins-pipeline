@@ -19,7 +19,7 @@ node {
             def dockerPassword = 'Hiren@9101991'
             sh "echo ${dockerPassword} | docker login -u ${dockerUsername} --password-stdin ${dockerRegistry}"
 
-            Docker.buildAndPushImage(dockerfile, imageName, imageTag)
+            my-docker-kubernetes-library.buildAndPushImage()
         }
     }
 
