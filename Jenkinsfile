@@ -19,12 +19,8 @@ pipeline {
         
     stage('Build and Push Docker Image') {
         steps {
-          script {
-            def dockerfile = 'Dockerfile'
-            def imageName = 'ab123cb/shred'
-            def imageTag = 'v1.0'
             
-            Docker(dockerfile, imageName, imageTag)
+            Docker()
         }
     }
 }
