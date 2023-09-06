@@ -10,12 +10,24 @@ pipeline {
     }
     stages {
 
-        stage('Build and Push Docker Image') {
+        stage('Docker Login') {
             steps {
                     
                     DockerHubLogin(dockerUsername,dockerPassword,dockerRegistry)
                 }
             }
         
+    stage('Build and Push Docker Image') {
+        steps {
+        // Use the custom function from the Docker.groovy script
+        script {
+            def dockerfile = 'Dockerfile'
+            def imageName = 'ab123cb/shred'
+            def imageTag = 'v1.0'
+            
+            Docker.buildAndPushImage(dockerfile, imageName, imageTag)
+        }
     }
+}
+}
 }
