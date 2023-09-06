@@ -17,7 +17,7 @@ node {
             def dockerRegistry = 'docker.io'
             def dockerPassword = 'Hiren@9101991'
 
-            call(dockerUsername,dockerPassword,dockerRegistry)
+            DockerHubLogin.call(dockerUsername,dockerPassword,dockerRegistry)
         }
     }
 
