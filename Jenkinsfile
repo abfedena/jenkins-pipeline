@@ -1,6 +1,4 @@
 // Jenkinsfile
-import jenkins.model.*
-jenkins = Jenkins.instance
 @Library('my-docker-kubernetes-library')
 
 node {
